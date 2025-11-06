@@ -2,7 +2,7 @@
 # nycOpenData <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/NYC_logo.svg/64px-NYC_logo.svg.png" align="right" width="60"/>
 
 An R package providing easy access to datasets from the [NYC Open
-Data](https://data.cityofnewyork.us/) platform.  
+Data](https://opendata.cityofnewyork.us//) platform.  
 The first release (`v0.1.0`) includes the `nyc_311()` function for
 retrieving NYC 311 Service Request data in a tidy format.
 
