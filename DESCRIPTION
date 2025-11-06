@@ -1,0 +1,24 @@
+Package: nycOpenData
+Type: Package
+Title: Easy Access to NYC Open Data APIs
+Version: 0.1.0
+Authors@R: 
+    person("Christian", "Martinez", 
+           email = "c.martinez0@outlook.com", 
+           role = c("aut", "cre"))
+Description: Provides simple, reproducible access to datasets from 
+    the NYC Open Data platform (<https://data.cityofnewyork.us/>). 
+    The initial release includes the 'nyc_311()' function for retrieving 
+    311 Service Request data in a tidy format.
+License: MIT + file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.3.3
+Imports: 
+    httr,
+    jsonlite,
+    tibble
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
