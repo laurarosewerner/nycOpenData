@@ -22,3 +22,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/martinezc1/nycOpenData
+BugReports: https://github.com/martinezc1/nycOpenData/issues
