@@ -23,5 +23,6 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown
-URL: https://github.com/martinezc1/nycOpenData
+URL: https://github.com/martinezc1/nycOpenData, https://martinezc1.github.io/nycOpenData/
 BugReports: https://github.com/martinezc1/nycOpenData/issues
+VignetteBuilder: knitr
