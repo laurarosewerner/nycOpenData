@@ -45,11 +45,10 @@ and awards and official rules proposed and adopted by city agencies.
 # do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 10 rows)
-  small_sample <- nyc_city_record(limit = 10)
-  head(small_sample)
+  # Quick example (fetch 2 rows)
+  small_sample <- nyc_city_record(limit = 2)
+  small_sample
 
-  nyc_city_record(limit = 5000)
   nyc_city_record(filters = list(short_title = "APPOINTED"))
 }
 #> # A tibble: 10,000 × 7

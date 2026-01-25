@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/dg92-zbpx.json?%24limit=2&%24order=start_date+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Sun, 25 Jan 2026 02:51:59 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4zMzgxNV8xNV80NzU4Sk9rVDFhR29mM2VHdENGZ081dXFpRzZGVEJF---gzipRXg31_oTAtnbSBKM5t6itIPpZ4o--gzip--gzip"'
+      x-soda2-fields: '["request_id","start_date","end_date","agency_name","type_of_notice_description","category_description","short_title","selection_method_description","section_name","special_case_reason_description","pin","due_date","address_to_request","contact_name","contact_phone","email","contract_amount","contact_fax","additional_description_1","additional_description_2","additional_description_3","other_info_1","other_info_2","other_info_3","vendor_name","vendor_address","printout_1","printout_2","printout_3","document_links","event_date","building_name","street_address_1","street_address_2","city","state","zip_code"]'
+      x-soda2-types: '["number","floating_timestamp","floating_timestamp","text","text","text","text","text","text","text","text","floating_timestamp","text","text","text","text","number","text","text","text","text","text","text","text","text","text","text","text","text","url","floating_timestamp","text","text","text","text","text","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Sat, 24 Jan 2026 13:28:05 GMT
+      x-soda2-secondary-last-modified: Sat, 24 Jan 2026 13:28:05 GMT
+      last-modified: Sat, 24 Jan 2026 13:28:05 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '0'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 2fb6300a5a490680c7b5680ffb9b485b
+    body:
+      string: |
+        [{"request_id":"20260116008","start_date":"2026-01-23T00:00:00.000","end_date":"2026-01-23T00:00:00.000","agency_name":"Education","type_of_notice_description":"Award","category_description":"Services (other than human services)","short_title":"B3275 - Assessments for Special Education","selection_method_description":"Renewal","section_name":"Procurement","pin":"04021B0003020R001","contact_name":"Angela Edwards","contact_phone":"(718) 935-2095","email":"aedwards@schools.nyc.gov","contract_amount":"25916","vendor_name":"Legendary Speech Pathology PLLC","vendor_address":"997 Stafford Avenue"}
+        ,{"request_id":"20260121002","start_date":"2026-01-23T00:00:00.000","end_date":"2026-01-23T00:00:00.000","agency_name":"Housing Authority","type_of_notice_description":"Notice","short_title":"NOTICE OF INTENT TO PROCURE PLUMBING AND RELATED RESIDENTAL BUILDING RENOVATIONS AT NYCHA\u001aS HOUSING DEVELOPMENTS","section_name":"Special Materials","additional_description_1":"<p style='text-align:center'><u>NOTICE OF INTENT TO PROCURE PLUMBING AND RELATED RESIDENTAL BUILDING RENOVATIONS AT NYCHA\u001aS HOUSING DEVELOPMENTS</u></p><p>The New York City Housing Authority (\u001aNYCHA\u001a), through its Comprehensive Modernization Department, intends to initiate a competitive, two-step procurement process for design-build services at housing developments in Northern Manhattan.</p><p>The project scope includes work at one 17-story building and one 20-story building (152 and 160 dwelling units, respectively), which are part of a larger multi-building campus. Anticipated work may include, but is not limited to: (i) plumbing and waste line replacement; (ii) repairs to gas risers, kitchens, bathrooms, and impacted electrical systems; and (iii) related services, including asbestos and lead abatement and temporary resident relocation. The project rough order of magnitude (ROM) is $28 million to $33 million.</p><p><br>NYCHA seeks integrated design-build teams capable of delivering end-to-end services, including design, hazardous material abatement, construction, resident engagement, and relocation services. This project aligns with NYCHA\u001as Comprehensive Modernization framework and the Waste Plumbing Initiative, funded by the City of New York, and is intended to address persistent leaks, mold, and related conditions caused by deteriorated plumbing systems, thereby improving residents\u001a quality of life.</p><p><br>NYCHA anticipates advertising a single Request for Qualifications (RFQ) in the City Record in February 2026. Statements of Qualifications (SOQs) will be evaluated in accordance with the RFQ, and the highest-ranked teams will be invited to participate in the second phase of the procurement through a Request for Proposals (RFP).</p><p><br>This Notice of Intent (\u001aNOI\u001a) is issued solely for informational and planning purposes to alert interested firms to the anticipated solicitation. This notice does not constitute a solicitation.<br>All NYCHA contracts require compliance with U.S. Department of Housing and Urban Development requirements including, without limitation, Section 3 of the Housing and Development Act of 1968 (12 U.S.C. 1701u), New York City Mayor\u001as Office of Contract Services (MOCS) PASSPort registration requirements, compliance with Project Labor Agreement inclusive of weekly certified payrolls, etc.</p><p><br>CONTACT: Interested firms are encouraged to use the link below to indicate their interest in the forthcoming RFQ to assist NYCHA in assessing market participation.<br>https://forms.gle/T2Vph5fQyD9fw1un6 </p>"}]
+  recorded_at: 2026-01-25 02:51:59
+recorded_with: VCR-vcr/2.1.0

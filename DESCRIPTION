@@ -1,7 +1,7 @@
 Package: nycOpenData
 Type: Package
 Title: Convenient Access to NYC Open Data API Endpoints
-Version: 0.1.4
+Version: 0.1.5
 Authors@R: 
     person("Christian", "Martinez", 
            email = "c.martinez0@outlook.com", 
@@ -11,8 +11,8 @@ Description: Provides a unified set of helper functions to access datasets
     Functions return results as tidy tibbles and support optional filtering, 
     sorting, and row limits via the Socrata API. The package includes endpoints 
     for 311 service requests, DOB job applications, juvenile justice metrics, 
-    school safety, environmental data, event permitting, and additional 
-    citywide datasets.
+    school safety, environmental data, event permitting, and additional citywide datasets. The
+    package is utilized as a primary pedagogical tool for teaching data acquisition in 'Reproducible Research Using R'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.3
@@ -22,7 +22,13 @@ Imports:
     tibble,
     curl
 Suggests: 
+    ggplot2,
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0),
+    vcr (>= 0.6.0),
+    webmockr
 URL: https://martinezc1.github.io/nycOpenData/, https://github.com/martinezc1/nycOpenData
 BugReports: https://github.com/martinezc1/nycOpenData/issues
+VignetteBuilder: knitr
+Config/testthat/edition: 3

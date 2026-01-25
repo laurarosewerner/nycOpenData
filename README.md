@@ -15,7 +15,7 @@ from R,
 with **no API keys** or manual downloads required. The package is
 available on **CRAN**.
 
-Version **0.1.4** now includes wrappers for **30+ NYC Open Data APIs**,
+Version **0.1.5** now includes wrappers for **30+ NYC Open Data APIs**,
 covering:
 
 - 311 Service Requests  
@@ -87,6 +87,11 @@ head(filtered)
     ## #   borough <chr>, x_coordinate_state_plane <chr>, …
 
 ------------------------------------------------------------------------
+
+## Learn by example
+
+- `vignette("nyc-311", package = "nycOpenData")` – Working with NYC 311
+  data end-to-end
 
 ## About
 

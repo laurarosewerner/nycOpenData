@@ -40,18 +40,5 @@ if (curl::has_internet()) {
     head(out)
   }
 }
-#> # A tibble: 3 × 36
-#>   unique_key created_date           agency agency_name complaint_type descriptor
-#>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67572042   2026-01-23T02:20:59.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 2 67573444   2026-01-23T02:20:43.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 3 67573446   2026-01-23T02:19:18.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> # ℹ 30 more variables: location_type <chr>, incident_zip <chr>,
-#> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
-#> #   cross_street_2 <chr>, intersection_street_1 <chr>,
-#> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,
-#> #   landmark <chr>, status <chr>, community_board <chr>,
-#> #   council_district <chr>, police_precinct <chr>, bbl <chr>, borough <chr>,
-#> #   x_coordinate_state_plane <chr>, y_coordinate_state_plane <chr>, …
 # }
 ```
