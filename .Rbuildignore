@@ -8,3 +8,9 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^doc$
+^Meta$
+^CODE_OF_CONDUCT\.md$
+^paper\.md$
+^paper\.bib$
+^tests/testthat/_vcr$

@@ -39,20 +39,35 @@ including parades, festivals, street fairs, and other public gatherings.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
-# do not fail when the network is unavailable or slow.
 # \donttest{
 if (curl::has_internet()) {
-  # Quick example (fetch 2 rows)
-  small_sample <- nyc_permit_events_historic(limit = 2)
-  small_sample
+  small_sample <- try(
+    nyc_permit_events_historic(limit = 2, timeout_sec = 10),
+    silent = TRUE
+  )
+  if (!inherits(small_sample, "try-error")) print(small_sample)
 
-  nyc_permit_events_historic(limit = 2, filters = list(event_type = "Construction"))
+  filtered <- try(
+    nyc_permit_events_historic(
+      limit = 2,
+      filters = list(event_type = "Construction"),
+      timeout_sec = 10
+    ),
+    silent = TRUE
+  )
+  if (!inherits(filtered, "try-error")) print(filtered)
 }
-#> Error: NYC Open Data request failed (network unavailable or API slow).
-#> Try again later or increase `timeout_sec`.
-#> 
-#> Underlying error: Timeout was reached [data.cityofnewyork.us]:
-#> Operation timed out after 60002 milliseconds with 0 bytes received
+#> # A tibble: 2 × 1
+#>   event_agency
+#>   <chr>       
+#> 1 "43, "      
+#> 2 "43, "      
+#> # A tibble: 2 × 11
+#>   event_id event_name      start_date_time end_date_time event_agency event_type
+#>   <chr>    <chr>           <chr>           <chr>         <chr>        <chr>     
+#> 1 349083   FIELD 15 CLOSE… 2019-09-05T08:… 2019-09-05T2… Parks Depar… Construct…
+#> 2 364912   CRICKET FIELDS… 2019-09-05T08:… 2019-09-05T2… Parks Depar… Construct…
+#> # ℹ 5 more variables: event_borough <chr>, event_location <chr>,
+#> #   street_closure_type <chr>, community_board <chr>, police_precinct <chr>
 # }
 ```

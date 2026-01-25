@@ -1,6 +1,6 @@
 # Articles
 
-### All vignettes
+### Vignettes
 
-- [Working with NYC 311
-  Data](https://martinezc1.github.io/nycOpenData/articles/nyc-311.md):
+- [Getting Started with
+  nycOpenData](https://martinezc1.github.io/nycOpenData/articles/getting-started.md):
