@@ -1,5 +1,5 @@
 
-# nycOpenData <img src="man/figures/logo.png" alt="nycOpenData logo" width="72" align="right" />
+# nycOpenData <img src="man/figures/nycOpenData_hex.png" alt="nycOpenData logo" width="72" align="right" />
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/nycOpenData)](https://CRAN.R-project.org/package=nycOpenData)
