@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/jb3k-j3gp.json?%24limit=2&%24order=last_updated_date+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Mon, 26 Jan 2026 22:18:32 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC4xNTY3OV84MzhfODEyNzk0TGphWmF3anBkRmhUWmhDOWc4VjNpdFVnSQ---gziutiu6mKglBHxWfzlPnrFKRAmVhI--gzip--gzip"'
+      x-soda2-fields: '["license_number","name","type","expiration_date","last_updated_date","last_updated_time"]'
+      x-soda2-types: '["text","text","text","floating_timestamp","floating_timestamp","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Mon, 26 Jan 2026 19:46:12 GMT
+      x-soda2-secondary-last-modified: Mon, 26 Jan 2026 19:46:12 GMT
+      last-modified: Mon, 26 Jan 2026 19:46:12 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '0'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: a5690911feec72f7263f968a25473987
+    body:
+      string: |
+        [{"license_number":"5023382","name":"MOSTAFA,MOHAMMED,G","type":"MEDALLION TAXI DRIVER","expiration_date":"2026-11-30T00:00:00.000","last_updated_date":"2026-01-26T00:00:00.000","last_updated_time":"13:20"}
+        ,{"license_number":"6010971","name":"FARUKI,MAHATHEER,KHAN","type":"MEDALLION TAXI DRIVER","expiration_date":"2028-12-28T00:00:00.000","last_updated_date":"2026-01-26T00:00:00.000","last_updated_time":"13:20"}]
+  recorded_at: 2026-01-26 22:18:32
+recorded_with: VCR-vcr/2.1.0

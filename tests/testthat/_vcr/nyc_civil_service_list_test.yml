@@ -1,0 +1,32 @@
+http_interactions:
+- request:
+    method: GET
+    uri: https://data.cityofnewyork.us/resource/vx8i-nprf.json?%24limit=2&%24order=published_date+DESC
+  response:
+    status: 200
+    headers:
+      server: nginx
+      date: Mon, 26 Jan 2026 20:59:33 GMT
+      content-type: application/json;charset=utf-8
+      transfer-encoding: chunked
+      connection: keep-alive
+      access-control-allow-origin: '*'
+      etag: '"Zm94dHJvdC42MDY0Ml8xMDY4XzE1MTIwY2QyMmVPbzJNYXFKOWFHMG1vdnI4dVpVQ05V---gzipMx8php5e4B9c2Pqj1n1JBIYRB9Y--gzip--gzip"'
+      x-soda2-fields: '["exam_no","list_no","first_name","mi","last_name","adj_fa","list_title_code","list_title_desc","group_no","list_agency_code","list_agency_desc","list_div_code","published_date","established_date","anniversary_date","extension_date","veteran_credit","parent_lgy_credit","sibling_lgy_credit","residency_credit"]'
+      x-soda2-types: '["text","number","text","text","text","number","text","text","text","text","text","text","floating_timestamp","floating_timestamp","floating_timestamp","floating_timestamp","text","text","text","text"]'
+      x-soda2-data-out-of-date: 'false'
+      x-soda2-truth-last-modified: Mon, 26 Jan 2026 14:04:50 GMT
+      x-soda2-secondary-last-modified: Mon, 26 Jan 2026 14:04:50 GMT
+      last-modified: Mon, 26 Jan 2026 14:04:50 GMT
+      vary: Accept-Encoding
+      content-encoding: gzip
+      age: '0'
+      x-socrata-region: aws-us-east-1-fedramp-prod
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-socrata-requestid: 3f4f33752112ade5aa439171ab9a96ad
+    body:
+      string: |
+        [{"exam_no":"5065","list_no":"1195","first_name":"MAXINE","mi":"Y","last_name":"SAMPSON","adj_fa":"100","list_title_code":"10104","list_title_desc":"ELIGIBILITY SPECIALIST","group_no":"000","list_agency_code":"000","list_agency_desc":"OPEN COMPETITIVE","established_date":"2025-04-23T00:00:00.000","anniversary_date":"2029-04-23T00:00:00.000"}
+        ,{"exam_no":"7604","list_no":"5813","first_name":"ADAM","mi":"L","last_name":"THOMASON","adj_fa":"83","list_title_code":"91211","list_title_desc":"TRAIN OPERATOR","group_no":"000","list_agency_code":"000","list_agency_desc":"OPEN COMPETITIVE","established_date":"2018-09-19T00:00:00.000","anniversary_date":"2022-09-19T00:00:00.000","extension_date":"2026-09-19T00:00:00.000"}]
+  recorded_at: 2026-01-26 20:59:33
+recorded_with: VCR-vcr/2.1.0
