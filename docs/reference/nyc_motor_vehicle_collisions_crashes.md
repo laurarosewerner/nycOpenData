@@ -61,16 +61,16 @@ if (curl::has_internet()) {
 #> # A tibble: 10,000 × 31
 #>    crash_date      crash_time borough zip_code latitude longitude on_street_name
 #>    <chr>           <chr>      <chr>   <chr>    <chr>    <chr>     <chr>         
-#>  1 2026-01-23T00:… 5:05       BROOKL… 11233    40.6772… -73.92823 ATLANTIC AVE  
-#>  2 2026-01-23T00:… 16:20      BROOKL… 11213    40.6691… -73.9299  NA            
-#>  3 2026-01-23T00:… 0:55       BROOKL… 11223    40.5991… -73.97471 AVENUE T      
-#>  4 2026-01-23T00:… 18:07      BROOKL… 11221    40.6922… -73.93091 MALCOLM X BLVD
-#>  5 2026-01-23T00:… 23:03      BROOKL… 11236    40.63063 -73.8990… AVENUE N      
-#>  6 2026-01-23T00:… 16:13      BROOKL… 11219    40.62677 -73.99354 59 ST         
-#>  7 2026-01-23T00:… 16:15      BROOKL… 11213    40.6643… -73.93154 UTICA AVE     
-#>  8 2026-01-23T00:… 17:36      BROOKL… 11222    40.7289… -73.95066 CALYER ST     
-#>  9 2026-01-23T00:… 12:36      BROOKL… 11205    40.69657 -73.9584… PARK AVE      
-#> 10 2026-01-23T00:… 8:00       BROOKL… 11216    40.6697… -73.94773 EASTERN PKWY  
+#>  1 2026-01-23T00:… 11:20      BROOKL… 11219    40.6325… -74.0063  FORT HAMILTON…
+#>  2 2026-01-23T00:… 16:13      BROOKL… 11219    40.62677 -73.99354 59 ST         
+#>  3 2026-01-23T00:… 21:16      BROOKL… 11236    40.6343… -73.90198 AVENUE L      
+#>  4 2026-01-23T00:… 16:05      BROOKL… 11226    40.6487… -73.95019 NA            
+#>  5 2026-01-23T00:… 16:02      BROOKL… 11213    40.67356 -73.9362… TROY AVE      
+#>  6 2026-01-23T00:… 6:45       BROOKL… 11234    40.6185… -73.94242 NEW YORK AVE  
+#>  7 2026-01-23T00:… 21:01      BROOKL… 11230    40.62628 -73.95629 NA            
+#>  8 2026-01-23T00:… 22:10      BROOKL… 11201    40.6892… -73.98872 STATE ST      
+#>  9 2026-01-23T00:… 22:04      BROOKL… 11237    40.69328 -73.90429 IRVING AVE    
+#> 10 2026-01-23T00:… 23:45      BROOKL… 11226    40.6510… -73.9643… CATON AVE     
 #> # ℹ 9,990 more rows
 #> # ℹ 24 more variables: off_street_name <chr>, number_of_persons_injured <chr>,
 #> #   number_of_persons_killed <chr>, number_of_pedestrians_injured <chr>,
