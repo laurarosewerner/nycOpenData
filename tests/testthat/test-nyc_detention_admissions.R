@@ -10,3 +10,9 @@ test_that("nyc_detention_admissions returns a tibble and respects limits", {
     expect_equal(nrow(results), 2)
   })
 })
+
+test_that("nyc_detention_admissions throws errors for bad inputs", {
+  # This touches the new 'stop' lines you just added
+  expect_error(nyc_detention_admissions(limit = "a string"))
+  expect_error(nyc_detention_admissions(filters = "not a list"))
+})

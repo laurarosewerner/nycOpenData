@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Mon, 26 Jan 2026 20:59:36 GMT
+      date: Tue, 27 Jan 2026 20:20:07 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,10 +23,10 @@ http_interactions:
       age: '0'
       x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: fefc366d5190e1a7cbf3da4a8193ea54
+      x-socrata-requestid: fbde5ec2e0a6c75fb535a58a0b918196
     body:
       string: |
         [{"year":"2012","area":"Total Unsheltered Individuals ","homeless_estimates":"3262"}
         ,{"year":"2012","area":"Subways ","homeless_estimates":"1634"}]
-  recorded_at: 2026-01-26 20:59:36
+  recorded_at: 2026-01-27 20:20:07
 recorded_with: VCR-vcr/2.1.0

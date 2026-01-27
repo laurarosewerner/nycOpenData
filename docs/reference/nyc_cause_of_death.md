@@ -50,20 +50,20 @@ if (curl::has_internet()) {
 
   nyc_cause_of_death(filters = list(sex = "M"))
 }
-#> # A tibble: 540 × 7
+#> # A tibble: 609 × 7
 #>    year  leading_cause                    sex   race_ethnicity deaths death_rate
 #>    <chr> <chr>                            <chr> <chr>          <chr>  <chr>     
-#>  1 2014  Influenza (Flu) and Pneumonia (… M     Not Stated/Un… 14     .         
-#>  2 2014  Chronic Lower Respiratory Disea… M     Not Stated/Un… 14     .         
-#>  3 2014  Mental and Behavioral Disorders… M     Other Race/ E… 12     .         
-#>  4 2014  Malignant Neoplasms (Cancer: C0… M     Asian and Pac… 657    114.5     
-#>  5 2014  Human Immunodeficiency Virus Di… M     Black Non-His… 196    22.7      
-#>  6 2014  Accidents Except Drug Posioning… M     Other Race/ E… 12     .         
-#>  7 2014  Diabetes Mellitus (E10-E14)      M     Black Non-His… 318    36.8      
-#>  8 2014  All Other Causes                 M     Hispanic       1195   100.1     
-#>  9 2014  Mental and Behavioral Disorders… M     Hispanic       191    16        
-#> 10 2014  Diabetes Mellitus (E10-E14)      M     Other Race/ E… 18     .         
-#> # ℹ 530 more rows
+#>  1 2018  Mental and Behavioral Disorders… M     Other Race/ E… 13     NA        
+#>  2 2018  Mental and Behavioral Disorders… M     Non-Hispanic … 271    32.335    
+#>  3 2018  Mental and Behavioral Disorders… M     Non-Hispanic … 413    31.381    
+#>  4 2018  Mental and Behavioral Disorders… M     Not Stated/Un… 23     28.794    
+#>  5 2018  Influenza (Flu) and Pneumonia (… M     Non-Hispanic … 240    28.637    
+#>  6 2018  Malignant Neoplasms (Cancer: C0… M     Other Race/ E… 36     NA        
+#>  7 2018  Chronic Lower Respiratory Disea… M     Non-Hispanic … 364    27.658    
+#>  8 2018  All Other Causes                 M     Non-Hispanic … 1538   183.513   
+#>  9 2018  Diseases of Heart (I00-I09, I11… M     Other Race/ E… 82     NA        
+#> 10 2018  All Other Causes                 M     Other Race/ E… 55     NA        
+#> # ℹ 599 more rows
 #> # ℹ 1 more variable: age_adjusted_death_rate <chr>
 # }
 ```

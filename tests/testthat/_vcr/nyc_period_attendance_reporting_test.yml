@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 00:18:56 GMT
+      date: Tue, 27 Jan 2026 20:20:13 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,10 +23,10 @@ http_interactions:
       age: '2'
       x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 0c32e64b18c39d1c776ea94a61d58909
+      x-socrata-requestid: eedd415991f96ec7a37aeba56ef6f894
     body:
       string: |
         [{}
         ,{"boro":"Q","year":"2015-2016","period":"3","district":"28","level":"220","school":"217","grade_code":"0","instruction_days":"17","religious_holydays":"2","classes":"680","register_last_report":"1572","admissions":"22","present_register":"1590","aggregate_register":"26870","aggregate_attendance":"25211","holyday_counter":"2","register_01":"1581","attendance_01":"1514","register_02":"1585","attendance_02":"1481","register_03":"0","attendance_03":"0","register_04":"0","attendance_04":"0","register_05":"0","attendance_05":"0","register_06":"0","attendance_06":"0","register_07":"0","attendance_07":"0","register_08":"0","attendance_08":"0","register_09":"0","attendance_09":"0"}]
-  recorded_at: 2026-01-27 00:18:56
+  recorded_at: 2026-01-27 20:20:13
 recorded_with: VCR-vcr/2.1.0

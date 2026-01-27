@@ -10,3 +10,9 @@ test_that("nyc_domestic_violence_annual_report returns a tibble and respects lim
     expect_equal(nrow(results), 2)
   })
 })
+
+test_that("nyc_domestic_violence_annual_report throws errors for bad inputs", {
+  # This touches the new 'stop' lines you just added
+  expect_error(nyc_domestic_violence_annual_report(limit = "a string"))
+  expect_error(nyc_domestic_violence_annual_report(filters = "not a list"))
+})

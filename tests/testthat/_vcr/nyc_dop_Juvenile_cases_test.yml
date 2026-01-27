@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 00:18:52 GMT
+      date: Tue, 27 Jan 2026 20:20:03 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -20,13 +20,13 @@ http_interactions:
       last-modified: Wed, 07 Jan 2026 20:22:03 GMT
       vary: Accept-Encoding
       content-encoding: gzip
-      age: '0'
+      age: '2'
       x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: c6af5ccb43f94e8b24960eadb822c5e5
+      x-socrata-requestid: 1bebcd7dfdc5f3dd1cc9f69a2871c1b0
     body:
       string: |
         [{"borough":"Citywide","supervision_caseload_type":"Advocate Intervene Mentor","month":"November","year":"2025","supervision_caseload_count":"37"}
         ,{"borough":"Citywide","supervision_caseload_type":"Juvenile Justice Initiative","month":"November","year":"2025","supervision_caseload_count":"132"}]
-  recorded_at: 2026-01-27 00:18:52
+  recorded_at: 2026-01-27 20:20:03
 recorded_with: VCR-vcr/2.1.0

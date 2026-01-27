@@ -10,3 +10,9 @@ test_that("nyc_street_hail_livery_active returns a tibble and respects limits", 
     expect_equal(nrow(results), 2)
   })
 })
+
+test_that("nyc_street_hail_livery_active throws errors for bad inputs", {
+  # This touches the new 'stop' lines you just added
+  expect_error(nyc_street_hail_livery_active(limit = "a string"))
+  expect_error(nyc_street_hail_livery_active(filters = "not a list"))
+})

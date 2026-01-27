@@ -6,27 +6,27 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Mon, 26 Jan 2026 20:59:33 GMT
+      date: Tue, 27 Jan 2026 20:19:54 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
       access-control-allow-origin: '*'
-      etag: '"Zm94dHJvdC4xNjMxMl8zXzcwd3FvVVRKb1M4OEJNSXlsQXIyaXQ0bTNXYUpn---gzipF4tiaFSUT8YwyQYcDXOQdFi_-pI--gzip--gzip"'
+      etag: '"Zm94dHJvdC4xNjMxMl8zXzcxd3FvVVRKb1M4OEJNSXlsQXIyaXQ0bTNXYUpn---gzipF4tiaFSUT8YwyQYcDXOQdFi_-pI--gzip--gzip"'
       x-soda2-fields: '["year","leading_cause","sex","race_ethnicity","deaths","death_rate","age_adjusted_death_rate"]'
       x-soda2-types: '["text","text","text","text","text","text","text"]'
       x-soda2-data-out-of-date: 'false'
-      x-soda2-truth-last-modified: Mon, 08 Dec 2025 20:32:52 GMT
-      x-soda2-secondary-last-modified: Mon, 08 Dec 2025 20:32:52 GMT
-      last-modified: Mon, 08 Dec 2025 20:32:52 GMT
+      x-soda2-truth-last-modified: Tue, 27 Jan 2026 19:52:17 GMT
+      x-soda2-secondary-last-modified: Tue, 27 Jan 2026 19:52:17 GMT
+      last-modified: Tue, 27 Jan 2026 19:52:17 GMT
       vary: Accept-Encoding
       content-encoding: gzip
       age: '0'
       x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: ba5cf8398378c17c67fae222577a7cc8
+      x-socrata-requestid: 436351a52618ee3bc2cf0edc43defb8b
     body:
       string: |
-        [{"year":"2014","leading_cause":"Influenza (Flu) and Pneumonia (J09-J18)","sex":"M","race_ethnicity":"Not Stated/Unknown","deaths":"14","death_rate":".","age_adjusted_death_rate":"."}
-        ,{"year":"2014","leading_cause":"Essential Hypertension and Renal Diseases (I10, I12)","sex":"F","race_ethnicity":"Other Race/ Ethnicity","deaths":".","death_rate":".","age_adjusted_death_rate":"."}]
-  recorded_at: 2026-01-26 20:59:33
+        [{"year":"2021","leading_cause":"All Other Causes","sex":"Female","race_ethnicity":"Not Stated/Unknown","deaths":"102"}
+        ,{"year":"2021","leading_cause":"Alzheimer's Disease (G30)","sex":"Female","race_ethnicity":"Not Stated/Unknown","deaths":"7"}]
+  recorded_at: 2026-01-27 20:19:55
 recorded_with: VCR-vcr/2.1.0

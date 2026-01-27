@@ -10,3 +10,10 @@ test_that("nyc_for_hire_vehicles returns a tibble and respects limits", {
     expect_equal(nrow(results), 2)
   })
 })
+
+test_that("nyc_for_hire_vehicles throws errors for bad inputs", {
+  # This touches the new 'stop' lines you just added
+  expect_error(nyc_for_hire_vehicles(limit = "a string"))
+  expect_error(nyc_for_hire_vehicles(filters = "not a list"))
+})
+

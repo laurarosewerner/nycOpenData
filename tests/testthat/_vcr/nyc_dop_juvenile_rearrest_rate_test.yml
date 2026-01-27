@@ -6,7 +6,7 @@ http_interactions:
     status: 200
     headers:
       server: nginx
-      date: Tue, 27 Jan 2026 00:18:54 GMT
+      date: Tue, 27 Jan 2026 20:20:04 GMT
       content-type: application/json;charset=utf-8
       transfer-encoding: chunked
       connection: keep-alive
@@ -23,10 +23,10 @@ http_interactions:
       age: '2'
       x-socrata-region: aws-us-east-1-fedramp-prod
       strict-transport-security: max-age=31536000; includeSubDomains
-      x-socrata-requestid: 7bb958db0a969be380b96d7ecdb8b3b0
+      x-socrata-requestid: 20008b1e5e5f2f93eecc023acb355915
     body:
       string: |
         [{"borough":"Citywide","month":"November","year":"2025","rate":"4.5"}
         ,{"borough":"Citywide","month":"October","year":"2025","rate":"4.7"}]
-  recorded_at: 2026-01-27 00:18:54
+  recorded_at: 2026-01-27 20:20:04
 recorded_with: VCR-vcr/2.1.0

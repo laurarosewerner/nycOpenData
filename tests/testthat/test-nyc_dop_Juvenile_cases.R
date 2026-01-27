@@ -10,3 +10,9 @@ test_that("nyc_dop_Juvenile_cases returns a tibble and respects limits", {
     expect_equal(nrow(results), 2)
   })
 })
+
+test_that("nyc_dop_Juvenile_cases throws errors for bad inputs", {
+  # This touches the new 'stop' lines you just added
+  expect_error(nyc_dop_Juvenile_cases(limit = "a string"))
+  expect_error(nyc_dop_Juvenile_cases(filters = "not a list"))
+})
