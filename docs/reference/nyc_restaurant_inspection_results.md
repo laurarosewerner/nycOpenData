@@ -67,27 +67,13 @@ for a summary of data fields and allowable values.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_restaurant_inspection_results(limit = 2)
   small_sample
 
   nyc_restaurant_inspection_results(limit = 2, filters = list(boro = "Queens"))
 }
-#> # A tibble: 2 × 28
-#>   camis    dba           boro  building street zipcode phone cuisine_description
-#>   <chr>    <chr>         <chr> <chr>    <chr>  <chr>   <chr> <chr>              
-#> 1 50134789 EL POLLO REA… Quee… 69-51    GRAND… 11378   3472… Spanish            
-#> 2 50145366 BIGWELL BAKE… Quee… 131-03   LIBER… 11419   6463… Caribbean          
-#> # ℹ 20 more variables: inspection_date <chr>, action <chr>,
-#> #   violation_code <chr>, violation_description <chr>, critical_flag <chr>,
-#> #   score <chr>, grade <chr>, grade_date <chr>, record_date <chr>,
-#> #   inspection_type <chr>, latitude <chr>, longitude <chr>,
-#> #   community_board <chr>, council_district <chr>, census_tract <chr>,
-#> #   bin <chr>, bbl <chr>, nta <chr>, location.type <chr>,
-#> #   location.coordinates <list>
-# }
 ```

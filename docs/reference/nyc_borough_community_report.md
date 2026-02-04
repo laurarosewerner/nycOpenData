@@ -40,22 +40,13 @@ transparency and analysis.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_borough_community_report(limit = 2)
   small_sample
 
   nyc_borough_community_report(limit = 2, filters = list(borough = "Bronx"))
 }
-#> # A tibble: 2 × 9
-#>   month         borough community_district bc_snap_recipients bc_snap_households
-#>   <chr>         <chr>   <chr>              <chr>              <chr>             
-#> 1 2025-12-01T0… Bronx   B01                45215              26196             
-#> 2 2025-12-01T0… Bronx   B12                43638              24470             
-#> # ℹ 4 more variables: bc_ca_recipients <chr>, bc_ca_cases <chr>,
-#> #   bc_ma_only_enrollees <chr>, bc_total_ma_enrollees <chr>
-# }
 ```

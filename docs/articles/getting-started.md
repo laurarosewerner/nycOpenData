@@ -43,38 +43,39 @@ this, we can set `limit = 3`.
 ``` r
 small_sample <- nyc_311(limit = 3)
 small_sample
-#> # A tibble: 3 × 32
-#>   unique_key created_date           agency agency_name complaint_type descriptor
-#>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67613985   2026-01-26T02:06:05.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 2 67606573   2026-01-26T02:05:43.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 3 67615419   2026-01-26T02:05:41.0… NYPD   New York C… Illegal Parki… Commercia…
-#> # ℹ 26 more variables: location_type <chr>, incident_zip <chr>,
+#> # A tibble: 3 × 33
+#>   unique_key created_date          closed_date agency agency_name complaint_type
+#>   <chr>      <chr>                 <chr>       <chr>  <chr>       <chr>         
+#> 1 67819192   2026-02-03T02:55:58.… 2026-02-03… DOT    Department… Street Condit…
+#> 2 67829262   2026-02-03T02:35:44.… NA          DOT    Department… Street Condit…
+#> 3 67827402   2026-02-03T02:34:48.… NA          DOT    Department… Street Condit…
+#> # ℹ 27 more variables: descriptor <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
-#> #   cross_street_2 <chr>, intersection_street_1 <chr>,
-#> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,
-#> #   landmark <chr>, status <chr>, community_board <chr>,
-#> #   council_district <chr>, police_precinct <chr>, bbl <chr>, borough <chr>,
-#> #   x_coordinate_state_plane <chr>, y_coordinate_state_plane <chr>, …
+#> #   cross_street_2 <chr>, address_type <chr>, city <chr>, facility_type <chr>,
+#> #   status <chr>, resolution_description <chr>,
+#> #   resolution_action_updated_date <chr>, community_board <chr>,
+#> #   police_precinct <chr>, borough <chr>, open_data_channel_type <chr>,
+#> #   park_facility_name <chr>, park_borough <chr>, …
 
 # Seeing what columns are in the dataset
 colnames(small_sample)
-#>  [1] "unique_key"               "created_date"            
-#>  [3] "agency"                   "agency_name"             
-#>  [5] "complaint_type"           "descriptor"              
-#>  [7] "location_type"            "incident_zip"            
-#>  [9] "incident_address"         "street_name"             
-#> [11] "cross_street_1"           "cross_street_2"          
-#> [13] "intersection_street_1"    "intersection_street_2"   
-#> [15] "address_type"             "city"                    
-#> [17] "landmark"                 "status"                  
-#> [19] "community_board"          "council_district"        
-#> [21] "police_precinct"          "bbl"                     
-#> [23] "borough"                  "x_coordinate_state_plane"
-#> [25] "y_coordinate_state_plane" "open_data_channel_type"  
-#> [27] "park_facility_name"       "park_borough"            
-#> [29] "latitude"                 "longitude"               
-#> [31] "location.type"            "location.coordinates"
+#>  [1] "unique_key"                     "created_date"                  
+#>  [3] "closed_date"                    "agency"                        
+#>  [5] "agency_name"                    "complaint_type"                
+#>  [7] "descriptor"                     "incident_zip"                  
+#>  [9] "incident_address"               "street_name"                   
+#> [11] "cross_street_1"                 "cross_street_2"                
+#> [13] "address_type"                   "city"                          
+#> [15] "facility_type"                  "status"                        
+#> [17] "resolution_description"         "resolution_action_updated_date"
+#> [19] "community_board"                "police_precinct"               
+#> [21] "borough"                        "open_data_channel_type"        
+#> [23] "park_facility_name"             "park_borough"                  
+#> [25] "intersection_street_1"          "intersection_street_2"         
+#> [27] "council_district"               "x_coordinate_state_plane"      
+#> [29] "y_coordinate_state_plane"       "latitude"                      
+#> [31] "longitude"                      "location.type"                 
+#> [33] "location.coordinates"
 ```
 
 Fantastic! We successfully pulled 311 data from the NYC Open Data
@@ -92,19 +93,19 @@ called “borough” which we can use to accomplish this.
 
 brooklyn_311 <- nyc_311(limit = 3, filters = list(borough = "BROOKLYN"))
 brooklyn_311
-#> # A tibble: 3 × 32
-#>   unique_key created_date           agency agency_name complaint_type descriptor
-#>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67613985   2026-01-26T02:06:05.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 2 67609553   2026-01-26T02:02:09.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 3 67610990   2026-01-26T01:58:58.0… NYPD   New York C… Illegal Parki… Blocked H…
-#> # ℹ 26 more variables: location_type <chr>, incident_zip <chr>,
+#> # A tibble: 3 × 36
+#>   unique_key created_date          closed_date agency agency_name complaint_type
+#>   <chr>      <chr>                 <chr>       <chr>  <chr>       <chr>         
+#> 1 67819192   2026-02-03T02:55:58.… 2026-02-03… DOT    Department… Street Condit…
+#> 2 67831232   2026-02-03T02:04:35.… NA          NYPD   New York C… Noise - Resid…
+#> 3 67820574   2026-02-03T02:01:58.… NA          NYPD   New York C… Illegal Parki…
+#> # ℹ 30 more variables: descriptor <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
-#> #   cross_street_2 <chr>, intersection_street_1 <chr>,
-#> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,
-#> #   landmark <chr>, status <chr>, community_board <chr>,
-#> #   council_district <chr>, police_precinct <chr>, bbl <chr>, borough <chr>,
-#> #   x_coordinate_state_plane <chr>, y_coordinate_state_plane <chr>, …
+#> #   cross_street_2 <chr>, address_type <chr>, city <chr>, facility_type <chr>,
+#> #   status <chr>, resolution_description <chr>,
+#> #   resolution_action_updated_date <chr>, community_board <chr>,
+#> #   police_precinct <chr>, borough <chr>, open_data_channel_type <chr>,
+#> #   park_facility_name <chr>, park_borough <chr>, location_type <chr>, …
 
 # Checking to see the filtering worked
 unique(brooklyn_311$borough)
@@ -127,16 +128,16 @@ brooklyn_nypd <- nyc_311(limit = 50, filters = list(agency = "NYPD", borough = "
 
 # Calling head of our new dataset
 head(brooklyn_nypd)
-#> # A tibble: 6 × 37
+#> # A tibble: 6 × 36
 #>   unique_key created_date           agency agency_name complaint_type descriptor
 #>   <chr>      <chr>                  <chr>  <chr>       <chr>          <chr>     
-#> 1 67613985   2026-01-26T02:06:05.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 2 67609553   2026-01-26T02:02:09.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 3 67610990   2026-01-26T01:58:58.0… NYPD   New York C… Illegal Parki… Blocked H…
-#> 4 67615428   2026-01-26T01:56:49.0… NYPD   New York C… Noise - Resid… Banging/P…
-#> 5 67609568   2026-01-26T01:48:16.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> 6 67612476   2026-01-26T01:47:10.0… NYPD   New York C… Noise - Resid… Loud Musi…
-#> # ℹ 31 more variables: location_type <chr>, incident_zip <chr>,
+#> 1 67831232   2026-02-03T02:04:35.0… NYPD   New York C… Noise - Resid… Loud Musi…
+#> 2 67820574   2026-02-03T02:01:58.0… NYPD   New York C… Illegal Parki… Blocked C…
+#> 3 67829429   2026-02-03T02:00:49.0… NYPD   New York C… Illegal Parki… Blocked H…
+#> 4 67827576   2026-02-03T01:59:53.0… NYPD   New York C… Illegal Parki… Blocked H…
+#> 5 67822079   2026-02-03T01:59:00.0… NYPD   New York C… Noise - Resid… Banging/P…
+#> 6 67822097   2026-02-03T01:54:10.0… NYPD   New York C… Noise - Resid… Loud Tele…
+#> # ℹ 30 more variables: location_type <chr>, incident_zip <chr>,
 #> #   incident_address <chr>, street_name <chr>, cross_street_1 <chr>,
 #> #   cross_street_2 <chr>, intersection_street_1 <chr>,
 #> #   intersection_street_2 <chr>, address_type <chr>, city <chr>,

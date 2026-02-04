@@ -44,22 +44,16 @@ schools according to the guidelines set by Local Law 43 of 2011.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_school_discharge_report_2013_2015(limit = 2)
   small_sample
 
-  nyc_school_discharge_report_2013_2015(limit = 2, filters = list(geography = "Citywide"))
+  nyc_school_discharge_report_2013_2015(
+    limit = 2,
+    filters = list(geography = "Citywide")
+  )
 }
-#> # A tibble: 2 × 9
-#>   school_year geography report_category by_group group_demographic group_metrics
-#>   <chr>       <chr>     <chr>           <chr>    <chr>             <chr>        
-#> 1 2014-2015   Citywide  Attendance Rate Gender … Female            0-20% Attend…
-#> 2 2014-2015   Citywide  Attendance Rate Gender … Female            41-60% Atten…
-#> # ℹ 3 more variables: value <chr>, percentage_within_demographic <chr>,
-#> #   total_number_within <chr>
-# }
 ```

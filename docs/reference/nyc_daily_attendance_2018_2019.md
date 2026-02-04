@@ -43,20 +43,16 @@ released by School DBN.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_daily_attendance_2018_2019(limit = 2)
   small_sample
 
-  nyc_daily_attendance_2018_2019(limit = 2, filters = list(school_dbn = "01M015"))
+  nyc_daily_attendance_2018_2019(
+    limit = 2,
+    filters = list(school_dbn = "01M015")
+  )
 }
-#> # A tibble: 2 × 6
-#>   school_dbn date     enrolled absent present released
-#>   <chr>      <chr>    <chr>    <chr>  <chr>   <chr>   
-#> 1 01M015     20190626 174      45     129     0       
-#> 2 01M015     20190625 174      37     137     0       
-# }
 ```

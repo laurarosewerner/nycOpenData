@@ -41,20 +41,16 @@ time shown in the Last Date Updated and Last Time Updated fields.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_medallion_drivers_active(limit = 2)
   small_sample
 
-  nyc_medallion_drivers_active(limit = 2, filters = list(type = "MEDALLION TAXI DRIVER"))
+  nyc_medallion_drivers_active(
+    limit = 2,
+    filters = list(type = "MEDALLION TAXI DRIVER")
+  )
 }
-#> # A tibble: 2 × 6
-#>   license_number name  type  expiration_date last_updated_date last_updated_time
-#>   <chr>          <chr> <chr> <chr>           <chr>             <chr>            
-#> 1 5434338        ZHAG… MEDA… 2026-05-08T00:… 2026-01-27T00:00… 13:20            
-#> 2 6110901        HOSS… MEDA… 2028-08-15T00:… 2026-01-27T00:00… 13:20            
-# }
 ```

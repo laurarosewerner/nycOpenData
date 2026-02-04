@@ -39,21 +39,13 @@ showers, medical help and a place to sleep
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_homeless_drop_in_centers(limit = 2)
   small_sample
 
   nyc_homeless_drop_in_centers(limit = 2, filters = list(borough = "Bronx"))
 }
-#> # A tibble: 1 × 13
-#>   center_name borough address               comments postcode latitude longitude
-#>   <chr>       <chr>   <chr>                 <chr>    <chr>    <chr>    <chr>    
-#> 1 Living Room Bronx   800 Barretto Street;… Open 24… 10474    40.8166… -73.8898…
-#> # ℹ 6 more variables: community_board <chr>, council_district <chr>,
-#> #   census_tract <chr>, bin <chr>, bbl <chr>, nta <chr>
-# }
 ```

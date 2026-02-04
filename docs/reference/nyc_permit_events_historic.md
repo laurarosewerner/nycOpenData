@@ -39,8 +39,9 @@ including parades, festivals, street fairs, and other public gatherings.
 ## Examples
 
 ``` r
-# \donttest{
-if (curl::has_internet()) {
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
   small_sample <- try(
     nyc_permit_events_historic(limit = 2, timeout_sec = 10),
     silent = TRUE
@@ -57,10 +58,4 @@ if (curl::has_internet()) {
   )
   if (!inherits(filtered, "try-error")) print(filtered)
 }
-#> # A tibble: 2 × 1
-#>   event_agency
-#>   <chr>       
-#> 1 "43, "      
-#> 2 "43, "      
-# }
 ```

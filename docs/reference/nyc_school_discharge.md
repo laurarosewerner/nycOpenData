@@ -42,22 +42,16 @@ student outcomes across the city.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_school_discharge(limit = 2)
   small_sample
 
-  nyc_school_discharge(limit = 2, filters = list(school_level = "High School"))
+  nyc_school_discharge(
+    limit = 2,
+    filters = list(school_level = "High School")
+  )
 }
-#> # A tibble: 2 × 9
-#>   year      report_category school_level geographic_unit school_name            
-#>   <chr>     <chr>           <chr>        <chr>           <chr>                  
-#> 1 2022-2023 School          High School  32K556          BUSHWICK LEADERS HS FO…
-#> 2 2022-2023 School          High School  32K564          BUSHWICK COMMUNITY HS  
-#> # ℹ 4 more variables: student_category <chr>, discharge_category <chr>,
-#> #   count_of_students <chr>, total_enrolled_students <chr>
-# }
 ```

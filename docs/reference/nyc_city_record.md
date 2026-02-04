@@ -41,21 +41,13 @@ and awards and official rules proposed and adopted by city agencies.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_city_record(limit = 2)
   small_sample
 
   nyc_city_record(limit = 2, filters = list(short_title = "APPOINTED"))
 }
-#> # A tibble: 2 × 7
-#>   request_id start_date            end_date agency_name short_title section_name
-#>   <chr>      <chr>                 <chr>    <chr>       <chr>       <chr>       
-#> 1 952751     2025-11-07T00:00:00.… 2025-10… BOARD OF E… APPOINTED   Changes in …
-#> 2 952782     2025-11-07T00:00:00.… 2025-01… BOARD OF E… APPOINTED   Changes in …
-#> # ℹ 1 more variable: additional_description_1 <chr>
-# }
 ```

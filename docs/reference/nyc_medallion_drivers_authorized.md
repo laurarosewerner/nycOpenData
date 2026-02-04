@@ -46,24 +46,13 @@ either today or yesterday's date, depending on the time of day.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_medallion_drivers_authorized(limit = 2)
   small_sample
 
   nyc_medallion_drivers_authorized(limit = 2, filters = list(current_status = "CUR"))
 }
-#> # A tibble: 2 × 15
-#>   license_number name        type       current_status dmv_license_plate_number
-#>   <chr>          <chr>       <chr>      <chr>          <chr>                   
-#> 1 4C97           HADIA LLC   05/31/2027 CUR            Y101758C                
-#> 2 2M40           MIGALOO LLC 05/31/2026 CUR            Y201452C                
-#> # ℹ 10 more variables: vehicle_vin_number <chr>, vehicle_type <chr>,
-#> #   model_year <chr>, medallion_type <chr>, last_updated_date <chr>,
-#> #   last_updated_time <chr>, agent_number <chr>, agent_name <chr>,
-#> #   agent_telephone_number <chr>, agent_address <chr>
-# }
 ```

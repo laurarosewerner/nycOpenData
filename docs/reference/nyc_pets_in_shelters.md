@@ -42,27 +42,13 @@ December; Quarter 3 (Q3): January - March; Quarter 4 (Q4): April - June.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_pets_in_shelters(limit = 2)
   small_sample
 
   nyc_pets_in_shelters(limit = 2, filters = list(date_quarter = "Qtr 1"))
 }
-#> # A tibble: 2 × 24
-#>   date_year date_quarter total_applicants had_pet client_borough_of_entry_bronx
-#>   <chr>     <chr>        <chr>            <chr>   <chr>                        
-#> 1 2026      Qtr 1        12062            16      16                           
-#> 2 2025      Qtr 1        11901            2       2                            
-#> # ℹ 19 more variables: client_borough_of_entry <chr>,
-#> #   client_borough_of_entry_1 <chr>, clients_who_would_have_entered <chr>,
-#> #   clients_choosing_to_forego <chr>, chose_to_forego_shelter_for <chr>,
-#> #   clients_who_intend_to_regain <chr>, number_of_dogs <chr>,
-#> #   number_of_cats <chr>, number_of_birds <chr>, number_of_small_mammals <chr>,
-#> #   number_of_reptiles_small <chr>, number_of_fish <chr>,
-#> #   did_not_report_pet_type <chr>, pet_s_placed_with_foster <chr>, …
-# }
 ```

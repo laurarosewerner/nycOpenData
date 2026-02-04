@@ -46,22 +46,16 @@ HYA.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_runaway_and_homeless_youth_daily_census(limit = 2)
   small_sample
 
-  nyc_runaway_and_homeless_youth_daily_census(limit = 2,
-  filters = list(program_type = "Crisis Shelters")
+  nyc_runaway_and_homeless_youth_daily_census(
+    limit = 2,
+    filters = list(program_type = "Crisis Shelters")
   )
 }
-#> # A tibble: 2 × 5
-#>   date                program_type vacancies_per_day beds_per_day vacant_per_day
-#>   <chr>               <chr>        <chr>             <chr>        <chr>         
-#> 1 2025-06-30T00:00:0… Crisis Shel… 40                258          0.16          
-#> 2 2025-06-29T00:00:0… Crisis Shel… 34                258          0.13          
-# }
 ```

@@ -44,20 +44,16 @@ The information in the report is required under Local Law 38 of 2019.
 ## Examples
 
 ``` r
-# Examples that hit the live NYC Open Data API are wrapped so CRAN checks
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
 # do not fail when the network is unavailable or slow.
-# \donttest{
-if (curl::has_internet()) {
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_domestic_violence_annual_report(limit = 2)
   small_sample
 
-  nyc_domestic_violence_annual_report(limit = 2, filters = list(category = "FJC_Client_Visits"))
+  nyc_domestic_violence_annual_report(
+    limit = 2,
+    filters = list(category = "FJC_Client_Visits")
+  )
 }
-#> # A tibble: 2 × 8
-#>   year  category          bronx brooklyn manhattan queens staten_island citywide
-#>   <chr> <chr>             <chr> <chr>    <chr>     <chr>  <chr>         <chr>   
-#> 1 2024  FJC_Client_Visits 10844 12860    11003     13421  9528          57,656  
-#> 2 2023  FJC_Client_Visits 11033 10492    8931      11906  6801          49,163  
-# }
 ```
