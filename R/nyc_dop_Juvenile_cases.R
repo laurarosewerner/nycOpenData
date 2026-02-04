@@ -19,13 +19,13 @@
 #' # do not fail when the network is unavailable or slow.
 #' if (interactive() && curl::has_internet()) {
 #'   # Quick example (fetch 2 rows)
-#'   small_sample <- nyc_dop_Juvenile_cases(limit = 2)
+#'   small_sample <- nyc_dop_juvenile_cases(limit = 2)
 #'   small_sample
 #'
-#'   nyc_dop_Juvenile_cases(limit = 2, filters = list(borough = "Citywide"))
+#'   nyc_dop_juvenile_cases(limit = 2, filters = list(borough = "Citywide"))
 #' }
 #' @export
-nyc_dop_Juvenile_cases <- function(limit = 10000, filters = list(), timeout_sec = 30) {
+nyc_dop_juvenile_cases <- function(limit = 10000, filters = list(), timeout_sec = 30) {
   endpoint <- .nyc_endpoint("c49b-3kmd")
 
   query_list <- list(

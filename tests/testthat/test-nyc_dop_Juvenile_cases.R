@@ -1,9 +1,9 @@
-test_that("nyc_dop_Juvenile_cases returns a tibble and respects limits", {
+test_that("nyc_dop_juvenile_cases returns a tibble and respects limits", {
   # This 'cassette' will be saved in tests/fixtures/nyc_311_test.yml
-  vcr::use_cassette("nyc_dop_Juvenile_cases_test", {
+  vcr::use_cassette("nyc_dop_juvenile_cases_test", {
 
     # We use a small limit (2) to keep the recording file small
-    results <- nyc_dop_Juvenile_cases(limit = 2)
+    results <- nyc_dop_juvenile_cases(limit = 2)
 
     # Assertions: What should be true?
     expect_s3_class(results, "tbl_df")
@@ -11,8 +11,8 @@ test_that("nyc_dop_Juvenile_cases returns a tibble and respects limits", {
   })
 })
 
-test_that("nyc_dop_Juvenile_cases throws errors for bad inputs", {
+test_that("nyc_dop_juvenile_cases throws errors for bad inputs", {
   # This touches the new 'stop' lines you just added
-  expect_error(nyc_dop_Juvenile_cases(limit = "a string"))
-  expect_error(nyc_dop_Juvenile_cases(filters = "not a list"))
+  expect_error(nyc_dop_juvenile_cases(limit = "a string"))
+  expect_error(nyc_dop_juvenile_cases(filters = "not a list"))
 })

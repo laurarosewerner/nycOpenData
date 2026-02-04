@@ -58,7 +58,7 @@ Core helpers
 - [`nyc_domestic_violence_annual_report()`](https://martinezc1.github.io/nycOpenData/reference/nyc_domestic_violence_annual_report.md)
   : Annual Report on Domestic Violence Initiatives, Indicators and
   Factors
-- [`nyc_dop_Juvenile_cases()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dop_Juvenile_cases.md)
+- [`nyc_dop_juvenile_cases()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dop_juvenile_cases.md)
   : NYC DOP Juvenile Case Count By Type
 - [`nyc_dop_juvenile_rearrest_rate()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dop_juvenile_rearrest_rate.md)
   : NYC DOP Juvenile Rearrest Rate (Monthly Average)
@@ -139,7 +139,7 @@ Other NYC Open Data wrappers
 - [`nyc_domestic_violence_annual_report()`](https://martinezc1.github.io/nycOpenData/reference/nyc_domestic_violence_annual_report.md)
   : Annual Report on Domestic Violence Initiatives, Indicators and
   Factors
-- [`nyc_dop_Juvenile_cases()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dop_Juvenile_cases.md)
+- [`nyc_dop_juvenile_cases()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dop_juvenile_cases.md)
   : NYC DOP Juvenile Case Count By Type
 - [`nyc_dop_juvenile_rearrest_rate()`](https://martinezc1.github.io/nycOpenData/reference/nyc_dop_juvenile_rearrest_rate.md)
   : NYC DOP Juvenile Rearrest Rate (Monthly Average)

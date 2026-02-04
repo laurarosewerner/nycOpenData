@@ -5,7 +5,7 @@ Downloads DOP Juvenile Case Count By Type data from NYC Open Data.
 ## Usage
 
 ``` r
-nyc_dop_Juvenile_cases(limit = 10000, filters = list(), timeout_sec = 30)
+nyc_dop_juvenile_cases(limit = 10000, filters = list(), timeout_sec = 30)
 ```
 
 ## Source
@@ -44,9 +44,9 @@ citywide.
 # do not fail when the network is unavailable or slow.
 if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
-  small_sample <- nyc_dop_Juvenile_cases(limit = 2)
+  small_sample <- nyc_dop_juvenile_cases(limit = 2)
   small_sample
 
-  nyc_dop_Juvenile_cases(limit = 2, filters = list(borough = "Citywide"))
+  nyc_dop_juvenile_cases(limit = 2, filters = list(borough = "Citywide"))
 }
 ```
