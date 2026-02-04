@@ -8,6 +8,7 @@
 [![Codecov test coverage](https://codecov.io/gh/martinezc1/nycOpenData/branch/main/graph/badge.svg)](https://app.codecov.io/gh/martinezc1/nycOpenData)
 [![R-bloggers](https://img.shields.io/badge/Featured%20on-R--bloggers-orange)](https://www.r-bloggers.com/2026/01/nycopendata-a-unified-r-interface-to-nyc-open-data-apis/) 
 [![R Weekly](https://img.shields.io/badge/Featured%20on-R%20Weekly-blue)](https://rweekly.org/#RintheRealWorld)
+[![R-CMD-check](https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/martinezc1/nycOpenData/actions/workflows/R-CMD-check.yaml)
 
 `nycOpenData` provides simple, reproducible access to datasets from
 the  
@@ -144,4 +145,4 @@ Special thanks to the students of **PSYC 7750G – Reproducible Psychological Re
 ------------------------------------------------------------------------
 
 ## Academic Context
-This package is developed as a primary pedagogical tool for teaching data acquisition and open science practices at **Brooklyn College, City University of New York**.
+This package is developed as a primary pedagogical tool for teaching data acquisition and open science practices at **Brooklyn College, City University of New York (CUNY)**.
