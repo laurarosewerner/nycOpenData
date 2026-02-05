@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(ggplot2)
+library(dplyr)
 ```
 
 ## Introduction
@@ -54,23 +55,38 @@ brooklyn_pop
 ```
 
 ## Mini analysis
-Let's visualize how each borough's population has changed and is projected to change from 1950 to 2040:
+Let's visualize population trends across boroughs. First, we need to reshape the data from wide to long format:
+## Mini analysis
+
+Let's visualize population trends across boroughs. First, we need to reshape the data from wide to long format:
 ```{r population-trends, fig.alt="Line chart showing population trends for NYC's five boroughs from 1950 to 2040.", fig.cap="Population trends for NYC's five boroughs from 1950 to 2040, including historical data and projections.", fig.height=6, fig.width=8}
-# Ensure numeric columns are properly formatted
-population_data <- population_data %>%
+library(tidyr)
+
+# Get full dataset and filter for Total Population rows only
+population_data <- nyc_borough_population()
+
+# Clean borough names and filter to get individual boroughs (exclude NYC Total)
+borough_data <- population_data %>%
+  mutate(borough = trimws(borough)) %>%  # Remove leading/trailing spaces
+  filter(age_group == "Total Population", borough != "NYC Total")
+
+# Reshape from wide to long format
+pop_long <- borough_data %>%
+  select(borough, `_1950`, `_1960`, `_1970`, `_1980`, `_1990`, `_2000`, `_2010`, `_2020`, `_2030`, `_2040`) %>%
+  pivot_longer(cols = starts_with("_"), names_to = "year", values_to = "population") %>%
   mutate(
-    year = as.numeric(as.character(year)),
-    population = as.numeric(as.character(population))
+    year = as.numeric(gsub("_", "", year)),
+    population = as.numeric(population)
   )
 
 # Create line chart
-ggplot(population_data, aes(x = year, y = population, color = borough)) +
+ggplot(pop_long, aes(x = year, y = population, color = borough)) +
   geom_line(linewidth = 1) +
   geom_point(size = 2) +
   scale_y_continuous(labels = scales::comma) +
   theme_minimal() +
   labs(
-    title = "NYC Borough Population: 1950-2040",
+    title = "NYC Population by Borough: 1950-2040",
     subtitle = "Historical data and projections",
     x = "Year",
     y = "Population",
@@ -81,11 +97,10 @@ ggplot(population_data, aes(x = year, y = population, color = borough)) +
 
 We can also look at which borough is projected to have the largest population in 2040:
 ```{r summary-2040}
-population_data %>%
+pop_long %>%
   filter(year == 2040) %>%
   arrange(desc(population))
 ```
-
 ## Summary
 The `nyc_borough_population()` function provides easy access to demographic data for New York City spanning from 1950-2040. This enables analysis of long-term population trends, comparisons across boroughs, and exploration of projected future changes.
 
