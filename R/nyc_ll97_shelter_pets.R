@@ -17,32 +17,27 @@
 #' @source NYC Open Data: <https://data.cityofnewyork.us/Social-Services/Local-Law-97-of-2021-Pets-in-Shelter-Report/5nux-zfmw/about_data>
 #'
 #' @examples
-#' \donttest{
-#' if (curl::has_internet()) {
+#' # Examples that hit the live NYC Open Data API are guarded so CRAN checks
+#' # do not fail when the network is unavailable or slow.
+#' if (interactive() && curl::has_internet()) {
 #'   # Quick example (fetch 2 rows)
 #'   small_sample <- nyc_locallaw97_shelter_pets(limit = 2)
 #'   small_sample
 #'
-#'   # Example with a filter (Change 'column_name' and 'value' to real fields)
-#'   # nyc_locallaw97_shelter_pets(limit = 2, filters = list(column_name = "value"))
-#' }
+#'   # Example with a filter (replace with real fields/values if desired)
+#'   # nyc_locallaw97_shelter_pets(limit = 2, filters = list(date_quarter = "Qtr 1"))
 #' }
 #' @export
 nyc_locallaw97_shelter_pets <- function(limit = 10000, filters = list(), timeout_sec = 30) {
-  # Get the JSON endpoint from the 'API' button on NYC Open Data
-  endpoint <- "https://data.cityofnewyork.us/resource/5nux-zfmw.json"
+  endpoint <- .nyc_endpoint("5nux-zfmw")
 
   query_list <- list(
     "$limit" = limit,
-    "$order" = "date_year DESC, date_quarter DESC" # Choose a date column to sort by
+    "$order" = "date_year DESC, date_quarter DESC"
   )
 
-  if (length(filters) > 0) {
-    where_clauses <- paste0(names(filters), " = '", unlist(filters), "'")
-    query_list[["$where"]] <- paste(where_clauses, collapse = " AND ")
-  }
+  query_list <- .nyc_add_filters(query_list, filters)
 
-  # This uses the internal package helper to fetch the data
   data <- .nyc_get_json(endpoint, query_list, timeout_sec = timeout_sec)
   tibble::as_tibble(data)
 }

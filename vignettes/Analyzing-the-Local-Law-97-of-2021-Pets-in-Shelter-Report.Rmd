@@ -2,7 +2,7 @@
 title: "Analyzing the Local Law 97 of 2021-Pets in Shelter Report"
 output: html_document
 vignette: >
-  %\VignetteIndexEntry{Working with NYC Local Law 97 of 2021-Pets in Shelter Report}
+  %\VignetteIndexEntry{Analyzing the Local Law 97 of 2021-Pets in Shelter Report}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,11 +18,12 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(nycOpenData)
 library(ggplot2)
+library(dplyr)
 ```
 
 ## Introduction
 
-New York City serves a large and diverse population, including individuals and families who experience housing instability and may rely on homeless shelters for temporary support.Pets serve many important role in people’s lives, and understanding pet ownership among shelter entrants helps inform shelter policy, access to services, and resource planning.
+New York City serves a large and diverse population, including individuals and families who experience housing instability and may rely on homeless shelters for temporary support. Pets serve many important role in people’s lives, and understanding pet ownership among shelter entrants helps inform shelter policy, access to services, and resource planning.
 
 The **Local Law 97 of 2021 – Pets in Shelter Report** provides quarterly survey data on the types of pets owned by people entering New York City homeless shelters.This dataset was recently added to NYC Open Data and made publicly available on October 14, 2025. These data are published through NYC Open Data and are available [here](https://data.cityofnewyork.us/Social-Services/Local-Law-97-of-2021-Pets-in-Shelter-Report/5nux-zfmw/about_data).
 
@@ -86,6 +87,9 @@ Now that we’ve successfully pulled the data and have it in R, let’s do a qui
 To do this, we’ll create a simple bar chart showing the number of applicants with pets in each year.
 
 ```{r had-pet-year-graph, fig.alt="Bar chart showing the number of shelter applicants with pets by year.", fig.cap="Bar chart showing the number of shelter applicants with pets by year.", fig.height=5, fig.width=7}
+
+pets <- nyc_locallaw97_shelter_pets(limit = 100)
+pets$had_pet <- as.numeric(pets$had_pet)
 
 # Summarize by year
 pet_by_year <- pets %>%

@@ -30,14 +30,14 @@ to examine trends in pet ownership among shelter entrants and inform policy or
 resource planning.
 }
 \examples{
-\donttest{
-if (curl::has_internet()) {
+# Examples that hit the live NYC Open Data API are guarded so CRAN checks
+# do not fail when the network is unavailable or slow.
+if (interactive() && curl::has_internet()) {
   # Quick example (fetch 2 rows)
   small_sample <- nyc_locallaw97_shelter_pets(limit = 2)
   small_sample
 
-  # Example with a filter (Change 'column_name' and 'value' to real fields)
-  # nyc_locallaw97_shelter_pets(limit = 2, filters = list(column_name = "value"))
-}
+  # Example with a filter (replace with real fields/values if desired)
+  # nyc_locallaw97_shelter_pets(limit = 2, filters = list(date_quarter = "Qtr 1"))
 }
 }
