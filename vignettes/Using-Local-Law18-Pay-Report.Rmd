@@ -3,7 +3,7 @@ title: "Using Local Law 18 Pay Report Data"
 output: rmarkdown::html_vignette
 author: "Jonah Dratfield"
 vignette: >
-  %\VignetteIndexEntry{Working with Local Law 18 Pay Report Data}
+  %\VignetteIndexEntry{Using Local Law 18 Pay Report Data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
