@@ -7,7 +7,10 @@ Authors@R:
       person("Christian", "Martinez", 
              email = "c.martinez0@outlook.com", 
              role = c("aut", "cre"),
-             comment = c(GitHub = "martinezc1")),
+             comment = c(
+               GitHub = "martinezc1",
+               ORCID = "0009-0005-6026-6454"
+             )),
       person("Jonah", "Dratfield", 
              role = "ctb",
              comment = c(GitHub = "jdratfield38")),
